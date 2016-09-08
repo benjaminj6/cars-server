@@ -4,7 +4,7 @@
   "description": "An Express server related to cars",
   "main": "server/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha tests/api",
     "start": "nodemon server/server.js"
   },
   "repository": {
@@ -12,7 +12,7 @@
     "url": "git+https://github.com/benjaminj6/cars-server.git"
   },
   "jshintConfig": {
-    "esversion": "6",
+    "esversion": "6"
   },
   "author": "Benjamin Johnson",
   "license": "ISC",
