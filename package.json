@@ -4,8 +4,8 @@
   "description": "An Express server related to cars",
   "main": "server/server.js",
   "scripts": {
-    "test": "mocha tests/api",
-    "start": "nodemon server/server.js"
+    "test": "NODE_ENV=testing mocha server/api/**/*.test.js",
+    "start": "NODE_ENV=development nodemon server/server.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/benjaminj6/cars-server#readme",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "mongoose": "^4.6.0"
   },

@@ -1,7 +1,9 @@
-// Will be all logic related to handling requests
-var Controller = {};
+var express = require('express');
+var router = express.Router();
+var controller = require('./brands-controller');
 
-Controller.getAllBrands = function(res) {
-	// Will return all brands
-	res.status(200).json({ brands: 'BMW, Audi, Honda, Acura, Toyota, Lexus, Tesla'});
-};
+router.get('/', controller.getAllBrands);
+
+router.post('/create', controller.createNewBrand);
+
+module.exports = router;
