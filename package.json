@@ -5,7 +5,7 @@
   "main": "server/server.js",
   "scripts": {
     "test": "NODE_ENV=testing mocha server/api/**/*.test.js",
-    "start": "NODE_ENV=development nodemon server/server.js"
+    "start": "DEBUG=express:* NODE_ENV=development nodemon server/server.js"
   },
   "repository": {
     "type": "git",

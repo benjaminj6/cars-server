@@ -4,26 +4,26 @@ var Controller = {};
 
 
 // TODO -- update this to work with Mongoose data. 
-Controller.getAllBrands = function(req, res) {
+Controller.getAllBrands = function(req, res, next) {
 	Brand.find({}, function(err, brands) {
 		if (err) {
-			res.status(500).json(err);
+			res.status(200).json(brands);
 		} else {
 			res.status(200).json(brands);
 		}
 	})
 };
 
-Controller.createNewBrand = function(req, res) {
+Controller.createNewBrand = function(req, res, next) {
+
 	var newBrand = {
 		name: req.body.name,
-		dateEstablished: req.body.date,
-		carModels: req.body.carModels
+		dateEstablished: req.body.dateEstablished,
 	};
 
 	Brand.create(newBrand, function(err, brand) {
 		if (err) {
-			res.status(500).json(err);
+			return next(err);
 		} else {
 			res.status(201).json(brand);
 		}

@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var controller = require('./brands-controller');
+var controller = require('./brands.controller');
 
 router.get('/', controller.getAllBrands);
 
